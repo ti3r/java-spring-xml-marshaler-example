@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:oxm="http://www.springframework.org/schema/oxm"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.1.xsd">
+
+	<bean class="org.blanco.test.spring.xmltest.Person" id="alex" >
+		<property name="firstName" value="Alexandro"></property>
+		<property name="middleName" ><null /></property>
+		<property name="lastName" value="Blanco Santana"></property>
+		<property name="age"><value>25</value></property>
+		
+	</bean>
+	
+	<bean id="marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller" >
+		<property name="classesToBeBound">
+		<list>
+			<value>org.blanco.test.spring.xmltest.Person</value>
+		</list>
+		</property>
+	</bean>
+	
+	
+</beans>
